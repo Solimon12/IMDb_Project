@@ -16,5 +16,10 @@ define root view entity ZC_OS12_Movie as projection on ZR_OS12_MOVIE
   CreatedAt,
   CreatedBy,
   LastChangedAt,
-  LastChangedBy
+  LastChangedBy,
+  
+  GenreText,
+  
+  _Ratings : redirected to composition child ZC_OS12_RATING
+  
 }

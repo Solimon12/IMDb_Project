@@ -1,4 +1,5 @@
 @EndUserText.label: 'Movies'
 define service ZUI_OS12_MOVIE {
-  expose ZC_OS12_Movie;
+  expose ZC_OS12_Movie  as Movies;
+  expose ZC_OS12_RATING as Ratings;
 }

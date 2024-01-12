@@ -10,11 +10,14 @@
 
 annotate view ZC_OS12_Movie with
 {
-    /*Facets*/
+  /*Facets*/
   @UI.facet:
   [
     { position: 10, label: 'Movie Details', type: #FIELDGROUP_REFERENCE, targetQualifier: 'Details' },
-    { position: 20, label: 'Administrative Data', type: #FIELDGROUP_REFERENCE, targetQualifier: 'Data' }
+    { position: 20, label: 'Administrative Data', type: #FIELDGROUP_REFERENCE, targetQualifier: 'Data' },
+    { position: 30, label: 'Ratings', type: #LINEITEM_REFERENCE, targetElement: '_Ratings' }
+
+
   ]
 
 

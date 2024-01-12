@@ -1,0 +1,55 @@
+managed; // implementation in class zbp_r_os12_movie unique;
+
+
+/* Root Entitiy: Movie */
+define behavior for ZR_OS12_MOVIE //alias <alias_name>
+persistent table zabap_movie_a
+lock master
+//authorization master ( instance )
+{
+  create;
+  update;
+  delete;
+  association _Ratings { create; }
+
+  field ( numbering : managed ) MovieUUID;
+  field ( readonly ) MovieUUID;
+
+  mapping for zabap_movie_a corresponding
+    {
+      MovieUUID      = movie_uuid;
+      Title          = title;
+      Genre          = genre;
+      PublishingYear = publishing_year;
+      RuntimeInMin   = runtime_in_min;
+      ImageUrl       = image_url;
+      CreatedAt      = created_at;
+      CreatedBy      = created_by;
+      LastChangedAt  = last_changed_at;
+      LastChangedBy  = last_changed_by;
+    }
+}
+
+
+
+/* Child Entity: Rating */
+define behavior for ZR_OS12_RATING //alias <alias_name>
+persistent table zabap_rating_a
+lock dependent by _Movie
+//authorization dependent by _Movie
+{
+  update;
+  delete;
+  field ( numbering : managed ) RatingUUID;
+  field ( readonly ) MovieUUID, RatingUUID;
+  association _Movie;
+
+  mapping for zabap_rating_a corresponding
+    {
+      RatingUUID = rating_uuid;
+      MovieUUID  = movie_uuid;
+      UserName   = user_name;
+      Rating     = rating;
+      RatingDate = rating_date;
+    }
+}

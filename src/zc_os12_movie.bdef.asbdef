@@ -1,0 +1,19 @@
+projection;
+
+define behavior for ZC_OS12_Movie //alias <alias_name>
+{
+  use create;
+  use update;
+  use delete;
+
+  use association _Ratings { create; }
+}
+
+
+
+define behavior for ZC_OS12_RATING //alias <alias_name>
+{
+  use delete;
+
+  use association _Movie;
+}

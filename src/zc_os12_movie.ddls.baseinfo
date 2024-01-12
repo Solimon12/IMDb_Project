@@ -6,9 +6,14 @@
 "ZR_OS12_MOVIE"
 ],
 "ASSOCIATED":
-[],
+[
+"ZC_OS12_RATING",
+"ZR_OS12_RATING"
+],
 "BASE":
-[],
+[
+"ZR_OS12_MOVIE"
+],
 "ANNO_REF":
 [],
 "SCALAR_FUNCTION":
